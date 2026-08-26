@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071a34">
+<title>ManaBook AI — Interactive Textbook</title>
+<style>
+:root{--nav:#071a34;--blue:#1463ff;--teal:#0ba98a;--bg:#f4f7fb;--card:#fff;--ink:#152033;--muted:#68758a;--line:#dfe6ef;--gold:#f2b84b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:system-ui,-apple-system,"Noto Sans Telugu","Noto Sans",sans-serif;color:var(--ink)}button,select,input{font:inherit}.app{max-width:560px;margin:auto;min-height:100vh;background:#fff;box-shadow:0 0 30px #071a3415}.top{background:linear-gradient(145deg,#071a34,#123b68 55%,#0b8d77);color:#fff;padding:18px 18px 20px;position:sticky;top:0;z-index:20}.toprow{display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;font-size:18px}.ai{font-size:11px;background:#ffffff1c;border:1px solid #ffffff30;border-radius:99px;padding:6px 9px}.hello{margin-top:15px;font-size:27px;font-weight:850;line-height:1.1}.tag{font-size:12px;opacity:.86;margin-top:6px}.main{padding:15px 15px 90px}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:15px;margin:12px 0;box-shadow:0 8px 24px #071a340b}.label{font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:10px 0 5px}select,input{width:100%;border:1px solid var(--line);background:#fff;padding:12px;border-radius:12px;color:var(--ink)}button{border:0;border-radius:13px;padding:12px 14px;background:var(--nav);color:#fff;font-weight:800;cursor:pointer}.primary{background:linear-gradient(135deg,var(--blue),#0ba98a)}.ghost{background:#edf3fb;color:#123b68}.gold{background:#fff4d8;color:#805500}.danger{background:#fff0f0;color:#a22}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.tile{border:1px solid var(--line);border-radius:16px;padding:14px;background:#fff}.tile b{display:block;margin-bottom:4px}.tile span,.small{font-size:11px;color:var(--muted)}.hero{background:linear-gradient(145deg,#eff6ff,#effcf8);border:1px solid #dce9f3;border-radius:20px;padding:17px}.hero h2{margin:0 0 5px}.sectionTitle{font-size:18px;font-weight:900;margin:20px 0 8px}.chips{display:flex;gap:7px;overflow:auto;padding-bottom:3px}.chip{white-space:nowrap;background:#eef3f8;border-radius:99px;padding:8px 11px;font-size:12px;font-weight:750}.chip.on{background:#dfeaff;color:#1249b7}.book{background:#fffdf5;border:1px solid #ded6c5;border-radius:10px;min-height:480px;padding:24px 21px;position:relative;box-shadow:0 15px 35px #00000012}.book:before{content:"";position:absolute;left:14px;top:0;bottom:0;width:1px;background:#eadfcb}.bookmeta{text-align:center;color:#7a7468;font-size:11px}.book h1{text-align:center;color:#123b68;font-size:25px;margin:12px 0}.booktext{font-family:Georgia,"Noto Serif Telugu",serif;font-size:17px;line-height:1.9}.pageno{position:absolute;bottom:9px;left:0;right:0;text-align:center;color:#8c887e;font-size:11px}.tools{display:flex;gap:7px;overflow:auto;margin:10px 0}.tool{flex:0 0 auto;padding:9px 11px;border:1px solid var(--line);border-radius:12px;background:#fff;color:#24344b;font-size:12px;font-weight:750}.pullZone{margin-top:12px;border:2px dashed #0ba98a;border-radius:18px;background:#effcf8;padding:15px;text-align:center;color:#086a56;font-weight:900;touch-action:none;user-select:none}.pullArrow{font-size:27px}.pullSub{font-size:11px;font-weight:600;margin-top:3px}.unlock{display:none}.mode{background:#071a34;color:#fff;border-radius:20px;padding:16px;margin-top:12px}.mode h3{margin:5px 0}.stage{min-height:205px;border-radius:16px;background:radial-gradient(circle at 50% 20%,#2c4d76,#07111f 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:18px}.scene{font-size:56px}.stageTitle{font-size:18px;font-weight:850}.modebar{display:flex;gap:7px;margin-top:9px}.modebar button{flex:1;background:#ffffff16;border:1px solid #ffffff25;font-size:11px}.modebar button.active{background:#fff;color:#071a34}.progress{height:6px;background:#ffffff20;border-radius:9px;margin:12px 0;overflow:hidden}.progress>div{height:100%;width:42%;background:#42e2b8}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:9px}.feature{padding:12px;border:1px solid #ffffff20;border-radius:14px;background:#ffffff0d;font-size:12px}.feature b{display:block;font-size:14px;margin-bottom:3px}.quizQ{font-size:17px;font-weight:800;line-height:1.45}.answer{width:100%;text-align:left;background:#f5f7fa;color:var(--ink);border:1px solid var(--line);margin:5px 0}.answer.ok{background:#e5f8ef;border-color:#55b789}.note{background:#fff8cf;border-radius:13px;padding:11px;font-size:12px;margin-top:8px}.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(560px,100%);background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);z-index:30}.nav{padding:9px 3px;text-align:center;font-size:10px;color:#6a7483}.nav.active{color:#1256d5;font-weight:900}.navIcon{font-size:18px;display:block}.screen{display:none}.screen.active{display:block}.back{background:#edf3fb;color:#123b68;width:auto}.modal{position:fixed;inset:0;background:#071a3488;z-index:50;display:none;align-items:flex-end}.sheet{background:#fff;border-radius:24px 24px 0 0;padding:18px;max-width:560px;width:100%;margin:auto;max-height:82vh;overflow:auto}.modal.show{display:flex}.close{float:right;background:#edf3fb;color:#123b68;border-radius:50%;width:38px;height:38px;padding:0}.list{border:1px solid var(--line);border-radius:14px;padding:12px;margin:7px 0}.toggle{display:flex;align-items:center;justify-content:space-between}.switch{width:46px;height:26px;background:#cbd5e1;border-radius:99px;padding:3px}.switch i{display:block;width:20px;height:20px;background:white;border-radius:50%}.switch.on{background:#0ba98a}.switch.on i{margin-left:20px}.toast{position:fixed;left:50%;bottom:75px;transform:translateX(-50%);background:#071a34;color:#fff;padding:10px 14px;border-radius:12px;z-index:70;display:none;font-size:12px}.toast.show{display:block}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top"><div class="toprow"><div class="brand">📖 ManaBook AI</div><div class="ai">✨ SMART LEARNING</div></div><div class="hello">Your textbook can come alive.</div><div class="tag">Read • Pull • Watch • Listen • Practice • Revise</div></header>
+
+<div class="main">
+<section id="home" class="screen active">
+<div class="hero"><h2>📚 Choose your learning path</h2><div class="small">Start with an authorized textbook or our original demo lesson.</div></div>
+<div class="card"><div class="label">State / Board</div><select><option>Telangana — Demo</option><option>Andhra Pradesh — Coming soon</option><option>CBSE — Coming soon</option></select><div class="label">Class</div><select><option>5th Class</option><option>1st Class</option><option>2nd Class</option><option>3rd Class</option><option>4th Class</option></select><div class="label">Medium</div><select><option>Telugu</option><option>English</option><option>Hindi</option></select><div class="label">Subject</div><select><option>Science</option><option>Telugu</option><option>English</option><option>Maths</option><option>Social Studies</option></select><div class="label">Book</div><select><option>Mana Science — Original Demo Book</option></select><button class="primary" onclick="openReader()">📖 Open Interactive Book</button></div>
+<div class="sectionTitle">✨ What makes ManaBook different?</div>
+<div class="grid2"><div class="tile"><b>⬆️ Pull a Page</b><span>Turn any difficult page into an explanation experience.</span></div><div class="tile"><b>🎬 Story Mode</b><span>Lesson becomes an original visual story.</span></div><div class="tile"><b>🔊 Voice</b><span>Listen while you learn.</span></div><div class="tile"><b>🧠 Practice</b><span>Quiz, mistakes and revision.</span></div></div>
+<div class="sectionTitle">My Learning</div><div class="grid3"><div class="tile">⭐<br><span>Bookmarks</span></div><div class="tile">🖍️<br><span>Highlights</span></div><div class="tile">🧠<br><span>Revision</span></div></div>
+</section>
+
+<section id="reader" class="screen">
+<button class="back" onclick="go('home')">← Home</button>
+<div class="chips" style="margin:10px 0"><div class="chip on">Lesson 5</div><div class="chip">Page 1</div><div class="chip">Page 2</div><div class="chip">Page 3</div></div>
+<div class="tools"><button class="tool" onclick="toast('Highlight tool ready')">🖍️ Highlight</button><button class="tool" onclick="toast('Sketch mode ready')">✏️ Sketch</button><button class="tool" onclick="toast('Bookmark saved')">🔖 Bookmark</button><button class="tool" onclick="toast('Note saved')">📝 Note</button><button class="tool" onclick="fontUp()">A+ Text</button></div>
+<div id="bookWrap">
+<div class="book">
+<div class="bookmeta">5th Class • Telugu • Original Demo Lesson</div>
+<h1>నీటి ప్రయాణం</h1>
+<div class="booktext" id="bookText"><p>ఒక నీటి ప్రయాణం నేలలో పడింది. అది తనలో ఒక పెద్ద చెట్టుగా మారే శక్తి ఉందని తెలుసుకుంది.</p><p>ఆవిరి పైకి వెళ్లి చల్లబడినప్పుడు చిన్న నీటి బిందువులుగా మారుతుంది. అవి మేఘాలను ఏర్పరుస్తాయి. బిందువులు పెద్దవైతే వర్షంగా నేలపైకి వస్తాయి.</p><p><b>పాఠం:</b> నీరు ప్రకృతిలో ఆవిరి, మేఘాలు, వర్షం రూపాల్లో తిరుగుతూ ఉండే నీటి చక్రాన్ని ఏర్పరుస్తుంది.</p></div><div class="pageno">— 1 —</div></div>
+<div class="pullZone" id="pullZone"><div class="pullArrow">⬆️</div>PAGEని పైకి PULL చేయండి<div class="pullSub">అర్థం కాలేదా? ఈ exact lessonని learning modeలో చూడండి.</div></div>
+</div>
+<div id="alive" class="mode" style="display:none">
+<div class="small" style="color:#9fb3cc">✨ LESSON COMES ALIVE</div>
+<h3>నీటి ప్రయాణం — Story Explanation</h3>
+<div class="stage"><div class="scene" id="scene">💧</div><div class="stageTitle" id="stageTitle">Water begins its journey</div><div class="small" style="color:#cbd5e1">Original educational animation placeholder</div></div>
+<div class="progress"><div></div></div>
+<div class="modebar"><button class="active" onclick="setMode(this,'Story')">📖 Story</button><button onclick="setMode(this,'Teacher')">👩‍🏫 Teacher</button><button onclick="setMode(this,'Simple')">💡 Simple</button><button onclick="setMode(this,'Cinematic')">🎬 Cinematic</button></div>
+<div class="twocol" style="margin-top:10px"><button onclick="speak()">🔊 Voice</button><button onclick="explain()">✨ Explain More</button><button onclick="translateDemo()">🌐 Language</button><button onclick="ask()">❓ Ask AI</button></div>
+<div id="explainBox" class="note" style="display:none">Simple explanation: చిన్నగా మొదలుపెట్టినా ప్రతిరోజూ ప్రయత్నిస్తే మనలోని సామర్థ్యం పెరుగుతుంది.</div>
+<button class="primary" onclick="show('practice')">🧠 Continue to Practice</button>
+</div>
+</section>
+
+<section id="practice" class="screen">
+<button class="back" onclick="go('reader')">← Lesson</button>
+<div class="card"><div class="label">Quick Check</div><div class="quizQ">నీటి ప్రయాణం చివరికి ఏమైంది?</div><button class="answer" onclick="answer(this,false)">A. మేఘాలు ఏర్పడతాయి</button><button class="answer" onclick="answer(this,true)">B. మేఘాలు ఏర్పడతాయి</button><button class="answer" onclick="answer(this,false)">C. చెట్టు ఏర్పడుతుంది</button><div id="answerBox" class="note" style="display:none"></div></div>
+<div class="card"><h3>🧠 My Revision</h3><div class="list">⭐ Main idea — చిన్న ప్రయత్నం + క్రమశిక్షణ = మంచి ఫలితం</div><div class="list">📝 My Highlight — “ప్రతిరోజూ కొంచెం కొంచెంగా పెరిగింది.”</div><button class="primary" onclick="toast('Revision saved')">Save Revision</button></div>
+</section>
+
+<section id="toolsScreen" class="screen">
+<div class="sectionTitle">🛠️ Smart Learning Tools</div>
+<div class="card"><div class="toggle"><div><b>🔊 Read Aloud</b><div class="small">Listen to the selected page</div></div><div class="switch on"><i></i></div></div></div>
+<div class="card"><div class="toggle"><div><b>🌐 Explanation Language</b><div class="small">Telugu • English • Hindi</div></div><button class="ghost" style="width:auto" onclick="toast('Language selector opened')">Select</button></div></div>
+<div class="card"><h3>🎭 Explanation Styles</h3><div class="grid2"><button class="ghost" onclick="toast('Cartoon style selected')">🎨 Cartoon</button><button class="ghost" onclick="toast('Story style selected')">📖 Story</button><button class="ghost" onclick="toast('Teacher style selected')">👩‍🏫 Teacher</button><button class="ghost" onclick="toast('Adventure style selected')">⚔️ Adventure</button></div></div>
+<div class="card"><h3>👪 Parent / Teacher Mode</h3><p class="small">Future feature: progress, assignments, revision and learning insights.</p><button class="primary" onclick="toast('Parent/Teacher dashboard — coming in MVP')">Open Dashboard</button></div>
+</section>
+
+<section id="profile" class="screen">
+<div class="sectionTitle">👤 My Learning</div>
+<div class="card"><h3>5th Class • Telugu</h3><div class="progress" style="background:#dbe4ea"><div style="width:68%;background:#1463ff;height:100%"></div></div><b>68% lesson progress</b><p class="small">1 lesson completed • 3 bookmarks • 5 revision points</p></div>
+<div class="grid2"><div class="tile"><b>🔖 3</b><span>Bookmarks</span></div><div class="tile"><b>🖍️ 5</b><span>Highlights</span></div><div class="tile"><b>🧠 2</b><span>Tests</span></div><div class="tile"><b>🔥 4 days</b><span>Learning streak</span></div></div>
+<div class="card"><h3>⚙️ Settings</h3><button class="ghost" onclick="toast('Accessibility settings')">Accessibility</button><button class="ghost" onclick="toast('Download settings')">Offline Books</button><button class="ghost" onclick="toast('Privacy settings')">Privacy & Safety</button></div>
+</section>
+</div>
+
+<nav class="bottom"><div class="nav active" onclick="go('home',this)"><span class="navIcon">🏠</span>Home</div><div class="nav" onclick="go('reader',this)"><span class="navIcon">📖</span>Book</div><div class="nav" onclick="go('practice',this)"><span class="navIcon">🧠</span>Practice</div><div class="nav" onclick="go('toolsScreen',this)"><span class="navIcon">✨</span>AI Tools</div><div class="nav" onclick="go('profile',this)"><span class="navIcon">👤</span>Me</div></nav>
+<div class="toast" id="toast"></div>
+</div>
+<script>
+function go(id,el){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");document.querySelectorAll(".nav").forEach(x=>x.classList.remove("active"));if(el)el.classList.add("active");window.scrollTo(0,0)}
+function openReader(){go("reader");}
+function show(id){go(id)}
+function toast(t){let x=document.getElementById("toast");x.textContent=t;x.classList.add("show");setTimeout(()=>x.classList.remove("show"),1800)}
+let startY=0, pulled=false;
+const z=document.getElementById("pullZone");
+z.addEventListener("touchstart",e=>{startY=e.touches[0].clientY},{passive:true});
+z.addEventListener("touchend",e=>{let dy=startY-e.changedTouches[0].clientY;if(dy>35)unlock();},{passive:true});
+z.addEventListener("click",unlock);
+function unlock(){if(pulled)return;pulled=true;document.getElementById("alive").style.display="block";document.getElementById("pullZone").innerHTML="✅ LESSON UNLOCKED — scroll down";document.getElementById("alive").scrollIntoView({behavior:"smooth"});toast("Lesson comes alive ✨")}
+function setMode(btn,name){document.querySelectorAll(".modebar button").forEach(b=>b.classList.remove("active"));btn.classList.add("active");let data={Story:["💧","Water begins its journey"],Teacher:["👩‍🏫","Teacher explains the water cycle step by step"],Simple:["💡","Water keeps moving through nature"],Cinematic:["☁️","From water to clouds and rain"]}[name];document.getElementById("scene").textContent=data[0];document.getElementById("stageTitle").textContent=data[1]}
+function explain(){document.getElementById("explainBox").style.display="block"}
+function speak(){if("speechSynthesis"in window){speechSynthesis.cancel();let u=new SpeechSynthesisUtterance("ఒక నీటి ప్రయాణం నేలలో పడింది. వర్షం మరియు సూర్యకాంతితో అది నెమ్మదిగా మొలకెత్తి పెద్ద చెట్టుగా మారింది. చిన్న ప్రయత్నం కూడా క్రమంగా చేస్తే గొప్ప ఫలితం వస్తుంది.");u.lang="te-IN";speechSynthesis.speak(u)}else toast("Voice not supported")}
+function translateDemo(){toast("Language options: Telugu • English • Hindi")}
+function ask(){toast("AI Q&A will connect to backend in MVP")}
+function answer(b,ok){document.querySelectorAll(".answer").forEach(x=>x.disabled=true);if(ok)b.classList.add("ok");let r=document.getElementById("answerBox");r.style.display="block";r.textContent=ok?"✅ Correct! నీటి ఆవిరి చల్లబడితే మేఘాలు ఏర్పడతాయి.":"❌ Try again. Rewatch the explanation and retry."}
+function fontUp(){document.getElementById("bookText").style.fontSize="20px";toast("Text size increased")}
+</script>
+</body></html>
